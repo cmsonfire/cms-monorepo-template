@@ -1,24 +1,17 @@
 {
-    "name": "@cmsonfire/cms-library-template",
-    "version": "0.0.5",
+    "name": "root",
+    "private": true,
+    "version": "0.0.0",
     "license": "MIT",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsup index.ts --format cjs,esm --dts",
-        "release": "pnpm run build && changeset publish",
+        "ci:publish": "pnpm -r publish",
+        "build:all": "pnpm -r run build",
+        "release": "pnpm build:all && ci:publish",
         "lint": "tsc"
     },
     "devDependencies": {
         "@changesets/cli": "^2.26.0",
         "tsup": "^6.6.3",
         "typescript": "^4.9.5"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "dist"
-    ]
+    }
 }
