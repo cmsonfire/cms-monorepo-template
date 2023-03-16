@@ -7,8 +7,7 @@
         "ci:publish": "pnpm -r publish",
         "build:all": "pnpm -r run build",
         "lint:all": "pnpm -r run lint",
-        "release": "pnpm build:all && pnpm ci:publish",
-        "lint": "tsc"
+        "release": "pnpm build:all && pnpm ci:publish"
     },
     "devDependencies": {
         "@changesets/cli": "^2.26.0",
